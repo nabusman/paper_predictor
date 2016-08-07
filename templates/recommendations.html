@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block body %}
+  <ul class=entries>
+  {% for item in session.pop('papers', []) %}
+    <li><a href="{{ item }}">{{ item }}</a></li>
+  {% else %}
+    <li><em>Unbelievable.  No recommendations!</em>
+  {% endfor %}
+  </ul>
+{% endblock %}
